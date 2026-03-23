@@ -4,6 +4,8 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Anbu Oswald Asir — Marketing & Sales Lead</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
 <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
 :root {
@@ -32,7 +34,7 @@ body::before{content:'';position:fixed;inset:0;z-index:0;background-image:url("d
 .bnav-item:hover:not(.active){color:var(--text);background:rgba(255,255,255,0.06);}
 
 /* HERO */
-.hero{padding:2.5rem 1.5rem 2rem;display:flex;flex-direction:column;position:relative;overflow:hidden;}
+.hero{padding:2.5rem 1.5rem 2rem;position:relative;overflow:hidden;}
 .hero::after{content:'';position:absolute;width:500px;height:500px;top:-120px;right:-180px;background:radial-gradient(circle,rgba(255,92,58,0.18) 0%,transparent 70%);border-radius:50%;pointer-events:none;animation:blobDrift 8s ease-in-out infinite alternate;}
 .hero-blob2{position:absolute;width:400px;height:400px;bottom:-100px;left:-120px;background:radial-gradient(circle,rgba(255,179,71,0.12) 0%,transparent 70%);border-radius:50%;pointer-events:none;animation:blobDrift 11s ease-in-out infinite alternate-reverse;}
 @keyframes blobDrift{from{transform:translate(0,0) scale(1)}to{transform:translate(30px,20px) scale(1.08)}}
@@ -156,6 +158,91 @@ body::before{content:'';position:fixed;inset:0;z-index:0;background-image:url("d
 
 footer{text-align:center;padding:1.5rem;font-size:0.75rem;color:var(--muted2);}
 footer span{color:var(--a1);}
+
+
+/* ── HERO LAYOUT: two-column, text left / photo right ── */
+.hero{
+  padding:2.5rem 1.5rem 2rem;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero-inner{
+  position:relative;
+  z-index:1;
+  display:flex;
+  align-items:flex-start;
+  gap:1rem;
+}
+
+.hero-text{
+  flex:1;
+  min-width:0;
+}
+
+.hero-photo-col{
+  flex-shrink:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding-top:0.25rem;
+}
+
+.hero-photo-wrap{
+  position:relative;
+  width:108px;
+  height:115px;
+  border-radius:18px;
+  overflow:hidden;
+  margin:0;
+  aspect-ratio:auto;
+  max-width:none;
+  box-shadow:0 8px 32px rgba(255,92,58,0.38),0 0 0 2px rgba(255,92,58,0.28);
+}
+
+.hero-photo-wrap img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 15%;
+  display:block;
+}
+
+.hero-photo-wrap::after{
+  content:'';
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  height:38%;
+  background:linear-gradient(to top,rgba(13,13,15,0.65) 0%,transparent 100%);
+  pointer-events:none;
+}
+
+.hero-photo-badge{
+  display:none;
+}
+
+@media (min-width:480px){
+  .hero-photo-wrap{
+    width:140px;
+    height:148px;
+    border-radius:22px;
+  }
+}
+
+@media (min-width:760px){
+  .hero-inner{
+    gap:2.5rem;
+    align-items:center;
+  }
+
+  .hero-photo-wrap{
+    width:220px;
+    height:234px;
+    border-radius:26px;
+  }
+}
 </style>
 </head>
 <body>
@@ -164,21 +251,35 @@ footer span{color:var(--a1);}
 <div class="page active" id="pg-about">
   <div class="hero">
     <div class="hero-blob2"></div>
-    <div class="hero-photo-wrap">
-      <img src="profile.png" alt="Anbu Oswald Asir"/>
-      <div class="hero-photo-badge">Marketing &amp; Busines Analyst</div>
+
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="hero-chip">Open to Business Opportunities</div>
+        <h1>Turn Leads Into<br><span class="grad-text"><span id="typeword">Revenue.</span></span></h1>
+        <p class="hero-sub"><strong>Anbu Oswald Asir</strong> — 9+ years driving SaaS growth through data-driven campaigns, CRM strategy, and high-converting sales pipelines.</p>
+
+        <div class="hero-pills">
+          <span class="hp">Google Ads</span>
+          <span class="hp">Meta Ads</span>
+          <span class="hp">CRM</span>
+          <span class="hp">SaaS</span>
+          <span class="hp">B2B Sales</span>
+        </div>
+
+        <div class="hero-cta">
+          <a href="#" class="btn btn-fire" onclick="nav('pg-contact');return false;">Let's Talk 🔥</a>
+          <a href="#" class="btn btn-outline" onclick="nav('pg-exp');return false;">See Experience</a>
+        </div>
+      </div>
+
+      <div class="hero-photo-col">
+        <div class="hero-photo-wrap">
+          <img src="profile.png" alt="Anbu Oswald Asir">
+        </div>
+      </div>
     </div>
-    <div class="hero-chip">Open to Business Opportunities</div>
-    <h1>Turn Leads Into<br><span class="grad-text"><span id="typeword">Revenue.</span></span></h1>
-    <p class="hero-sub"><strong>Anbu Oswald Asir</strong> — 6+ years driving SaaS growth through data-driven campaigns, CRM strategy, and high-converting sales pipelines.</p>
-    <div class="hero-pills">
-      <span class="hp">Google Ads</span><span class="hp">Meta Ads</span><span class="hp">CRM</span><span class="hp">SaaS</span><span class="hp">B2B Sales</span>
-    </div>
-    <div class="hero-cta">
-      <a href="#" class="btn btn-fire" onclick="nav('pg-contact');return false;">Let's Talk 🔥</a>
-      <a href="#" class="btn btn-outline" onclick="nav('pg-exp');return false;">See Experience</a>
-    </div>
-    <div class="hero-stats">
+
+    <div class="hero-stats" style="margin-top:1.25rem;position:relative;z-index:1;">
       <div class="hstat"><span class="hstat-n">60K+</span><div class="hstat-l">Leads Generated</div></div>
       <div class="hstat"><span class="hstat-n">1K+</span><div class="hstat-l">Installations</div></div>
       <div class="hstat"><span class="hstat-n">80%</span><div class="hstat-l">Retention Rate</div></div>
@@ -195,9 +296,9 @@ footer span{color:var(--a1);}
         <div class="bcard-accent-bar"></div>
         <span class="bcard-icon">🎯</span>
         <div class="bcard-title">Profile</div>
-        <div class="bcard-body">Based in <strong style="color:var(--text)">Thoraipakkam, Chennai</strong>. I specialize in SaaS product marketing, paid advertising, and CRM-driven revenue growth. 6+ years at EinNel Technologies — building pipelines, launching products, and closing deals.</div>
+        <div class="bcard-body">Based in <strong style="color:var(--text)">Thoraipakkam, Chennai</strong>. I specialize in SaaS product marketing, paid advertising, and CRM-driven revenue growth. 9+ years at EinNel Technologies — building pipelines, launching products, and closing deals.</div>
       </div>
-      <div class="bcard reveal"><span class="bcard-big">6+</span><div class="bcard-label">Years SaaS Marketing &amp; Sales</div></div>
+      <div class="bcard reveal"><span class="bcard-big">9+</span><div class="bcard-label">Years SaaS Marketing &amp; Sales</div></div>
       <div class="bcard reveal"><span class="bcard-big">4</span><div class="bcard-label">SaaS Products Owned &amp; Launched</div></div>
       <div class="bcard reveal"><span class="bcard-big">60K+</span><div class="bcard-label">Total Leads Generated</div></div>
       <div class="bcard reveal"><span class="bcard-big">80%</span><div class="bcard-label">Customer Retention Rate</div></div>
@@ -209,7 +310,7 @@ footer span{color:var(--a1);}
       <div class="bcard wide reveal">
         <span class="bcard-icon">🎓</span>
         <div class="bcard-title">Education</div>
-        <div class="bcard-body"><strong style="color:var(--text)">B.E. Mechanical Engineering</strong> — Bethlahem Institute of Engineering, Karungal (2014–2017)<br/><br/><strong style="color:var(--text)">Diploma in Mechanical Engineering</strong> — The Kevin Polytechnic College, Tirunelveli (2010–2012)</div>
+        <div class="bcard-body"><strong style="color:var(--text)">B.E. Mechanical Engineering</strong> — Bethlahem Institute of Engineering, Karungal (2014–2017)<br><br><strong style="color:var(--text)">Diploma in Mechanical Engineering</strong> — The Kevin Polytechnic College, Tirunelveli (2010–2012)</div>
       </div>
     </div>
   </div>
@@ -319,14 +420,14 @@ footer span{color:var(--a1);}
     <h2 class="sec-heading reveal">Get In Touch 🙋</h2>
     <div class="contact-stack">
       <a class="cc reveal" href="tel:+917598449026"><div class="cc-icon">📞</div><div><span class="cc-lbl">Phone</span><span class="cc-val">+91 75984 49026</span></div></a>
-      <a class="cc reveal" href="mailto:oswaldasir@gmail.com"><div class="cc-icon">✉️</div><div><span class="cc-lbl">Email</span><span class="cc-val">oswaldasir@gmail.com</span></div></a>
+      <a class="cc reveal" href="mailto:oswaldasir@gmail.com?subject=Hello Oswald"><div class="cc-icon">✉️</div><div><span class="cc-lbl">Email</span><span class="cc-val">oswaldasir@gmail.com</span></div></a>
       <a class="cc reveal" href="https://linkedin.com/in/anbuoswaldasir" target="_blank"><div class="cc-icon">💼</div><div><span class="cc-lbl">LinkedIn</span><span class="cc-val">linkedin.com/in/anbuoswaldasir</span></div></a>
       <div class="cc reveal"><div class="cc-icon">📍</div><div><span class="cc-lbl">Location</span><span class="cc-val">Thoraipakkam, Chennai</span></div></div>
     </div>
     <div class="cta-block reveal">
       <h3>Ready to grow? 🚀</h3>
       <p>Whether it's scaling a SaaS product, running high-ROI campaigns, or building a data-driven sales engine — I'm in.</p>
-      <a class="btn btn-fire" href="mailto:oswaldasir@gmail.com">Send a Message →</a>
+      <a class="btn btn-fire" href="mailto:oswaldasir@gmail.com?subject=Hello Oswald">Send a Message →</a>
     </div>
   </div>
   <footer><span>Anbu Oswald Asir</span> · Marketing &amp; Sales Lead · Chennai</footer>
@@ -340,7 +441,7 @@ footer span{color:var(--a1);}
   <button class="bnav-item" data-page="pg-contact" onclick="nav('pg-contact')"><span class="ni">✉️</span><span class="nl">Contact</span></button>
 </nav>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // Marquee
   const mSkills=['SaaS Marketing','Google Ads','Meta Ads','CRM Strategy','Lead Gen','A/B Testing','ROI Optimization','Campaign Management','Product Marketing','Hubspot','Zoho CRM','Content Marketing','Sales Pipeline','Power BI','B2B Sales','Freshworks'];
   const mt=document.getElementById('mt');
