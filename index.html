@@ -139,7 +139,9 @@ body::before{content:'';position:fixed;inset:0;z-index:0;background-image:url("d
 .tl-title{font-family:var(--font-d);font-size:1.05rem;font-weight:600;margin-bottom:2px;}
 .tl-co{font-size:0.8rem;color:var(--muted);font-weight:500;margin-bottom:10px;}
 .tl-prods{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px;}
-.tl-prod{background:rgba(255,92,58,0.1);color:var(--a2);border:1px solid rgba(255,92,58,0.2);border-radius:5px;padding:2px 9px;font-size:0.68rem;font-weight:600;letter-spacing:0.04em;}
+.tl-prod{background:rgba(255,92,58,0.1);color:var(--a2);border:1px solid rgba(255,92,58,0.2);border-radius:5px;padding:2px 9px;font-size:0.68rem;font-weight:600;letter-spacing:0.04em;text-decoration:none;}
+.tl-prod[href]{cursor:pointer;}
+.tl-prod[href]:hover{border-color:rgba(255,92,58,0.45);background:rgba(255,92,58,0.16);color:var(--text);}
 .tl-ul{list-style:none;display:flex;flex-direction:column;gap:5px;}
 .tl-ul li{font-size:0.82rem;color:var(--muted);padding-left:14px;position:relative;line-height:1.55;}
 .tl-ul li::before{content:'›';position:absolute;left:0;color:var(--a1);font-size:1rem;line-height:1.35;}
@@ -369,14 +371,15 @@ footer span{color:var(--a1);}
           <div class="tl-title">Product Marketing &amp; Sales Lead</div>
           <div class="tl-co">EinNel Technologies, Chennai</div>
           <div class="tl-prods">
-          <a class="tl-prod" href="https://task.einnel.com/" target="_blank" rel="noopener noreferrer" data-tooltip="AI Based Workplace Solution">EinNel TASK</a>
+          <a class="tl-prod" href="https://task.einnel.com/" target="_blank" rel="noopener noreferrer" title="AI Based Workplace Solution" data-tooltip="AI Based Workplace Solution">TASK</a>
           
-          <a class="tl-prod" href="https://ecclesiaapp.com/" target="_blank" rel="noopener noreferrer" data-tooltip="Church Management SaaS">Ecclesia</a>
+          <a class="tl-prod" href="https://ecclesiaapp.com/" target="_blank" rel="noopener noreferrer" title="Church Management SaaS" data-tooltip="Church Management SaaS">Ecclesia</a>
           
-          <a class="tl-prod" href="https://edomapp.com/" target="_blank" rel="noopener noreferrer" data-tooltip="Donor CRM for NGOs">EDOM</a>
+          <a class="tl-prod" href="https://edomapp.com/" target="_blank" rel="noopener noreferrer" title="Donor CRM for NGOs" data-tooltip="Donor CRM for NGOs">EDOM</a>
           
-          <a class="tl-prod" href="https://erp.einnel.com/" target="_blank" rel="noopener noreferrer" data-tooltip="Enterprise Resource Planning System">ERP</a>
+          <a class="tl-prod" href="https://erp.einnel.com/" target="_blank" rel="noopener noreferrer" title="Enterprise Resource Planning System" data-tooltip="Enterprise Resource Planning System">ERP</a>
         </div>
+          <ul class="tl-ul">
             <li>Full product ownership across four SaaS products, idea through launch</li>
             <li>Prepared proposals, BRDs, and product roadmaps aligned to business goals</li>
             <li>Campaign management — A/B testing, CPC, PPC metrics &amp; ROI analysis</li>
@@ -391,7 +394,7 @@ footer span{color:var(--a1);}
         <div class="tl-card">
           <div class="tl-title">Lead Marketing &amp; Sales Engineer</div>
           <div class="tl-co">EinNel Technologies, Chennai</div>
-          <div class="tl-prods"><span class="tl-prod">TASK</span><span class="tl-prod">EDOM</span><span class="tl-prod">Ecclesia</span></div>
+          <div class="tl-prods"><a class="tl-prod" href="https://task.einnel.com/" target="_blank" rel="noopener noreferrer" title="AI Based Workplace Solution" data-tooltip="AI Based Workplace Solution">TASK</a><a class="tl-prod" href="https://edomapp.com/" target="_blank" rel="noopener noreferrer" title="Donor CRM for NGOs" data-tooltip="Donor CRM for NGOs">EDOM</a><a class="tl-prod" href="https://ecclesiaapp.com/" target="_blank" rel="noopener noreferrer" title="Church Management SaaS" data-tooltip="Church Management SaaS">Ecclesia</a></div>
           <ul class="tl-ul">
             <li>Executed targeted Google Ads campaigns for brand visibility</li>
             <li>Planned &amp; executed marketing campaigns and sales sequences in CRM</li>
@@ -406,7 +409,7 @@ footer span{color:var(--a1);}
         <div class="tl-card">
           <div class="tl-title">Evangelist &amp; Raconteur</div>
           <div class="tl-co">EinNel Technologies, Chennai</div>
-          <div class="tl-prods"><span class="tl-prod">TASK</span><span class="tl-prod">Ecclesia</span></div>
+          <div class="tl-prods"><a class="tl-prod" href="https://task.einnel.com/" target="_blank" rel="noopener noreferrer" title="AI Based Workplace Solution" data-tooltip="AI Based Workplace Solution">TASK</a><a class="tl-prod" href="https://ecclesiaapp.com/" target="_blank" rel="noopener noreferrer" title="Church Management SaaS" data-tooltip="Church Management SaaS">Ecclesia</a></div>
           <ul class="tl-ul">
             <li>Created content for paid campaigns and social media promotions</li>
             <li>Lead generation via Google Ads, email marketing &amp; cold outreach</li>
